@@ -1,7 +1,20 @@
 *{
     text-align:center;
+    
 }
 .answers, .computeranswers{
     color:red;
     display: inline-block;
+}
+input{
+    border-radius:5%;
+    font-size:200%;
+    text-align: left;
+    color:black;
+}
+body{
+    background: grey;
+}
+.setup{
+    color:white;
 }

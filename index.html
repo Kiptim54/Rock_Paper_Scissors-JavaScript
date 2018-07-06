@@ -11,13 +11,18 @@
     </script>
 </head>
 <body>
-    <h1>Hey there this will be a game of rock paper scissors</h1>
+    <div class="setup">
+        <img src="https://cdn0.iconfinder.com/data/icons/rock-paper-scissors-emoji/792/rock-paper-scissors-emoji-cartoon-016-512.png" alt="rock image" style="height:250px; width:300px;">
+    <h1>Rock, Paper, Scissors!</h1>
+    
     
         <form action="submit">
-            <h4>Before we begin, key in your name</h4>
-            <input class="input" type="text" name="name">
+            <h3>Before we begin, key in your name</h3>
+            <input placeholder="Your name" class="input" type="text" name="name">
             <input type="submit">
         </form>
+    </div>
+    
         <div class="game">
             <h3>Click any of the options to begin the game</h3>
             <div id="teams">
@@ -34,6 +39,9 @@
             <button id="rock" value="rock">Rock</button>
             <button id="paper" value="paper">Paper</button>
             <button id="scissors" value="scissors">Scissors</button>
+            <div id="commentary">
+                Commentary:
+            </div>
             
         </div>
   

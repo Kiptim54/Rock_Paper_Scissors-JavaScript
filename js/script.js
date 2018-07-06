@@ -9,8 +9,9 @@ document.addEventListener('DOMContentLoaded', function(){
         var name=document.querySelector('input').value;
         document.querySelector('input').value="";
         //hide form and display game
-        document.querySelector('form').style.display="none";
+        document.querySelector('.setup').style.display="none";
         document.querySelector(".game").style.display="block";
+        document.querySelector("body").style.background="white";
         var scores=document.querySelector("#teams");
         scores.innerHTML=`<h4>${name}:${playerScore} Computer:${computerScore}</h4>`;
         
@@ -21,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function(){
     function computerPlay(){
         let choices=["rock", "paper", "scissors"]
         let answer=choices[Math.floor(Math.random()*3)]
-        console.log("computer:"+answer);
         return answer
        
     }
@@ -38,45 +38,51 @@ document.addEventListener('DOMContentLoaded', function(){
         var computer=computerPlay();
         document.querySelector(".computeranswers").innerHTML=`<h4>Computer=${computer} </h4>`;
         if (computer=="rock"){
-        alert("it's a tie");
+            document.querySelector("#commentary").innerHTML=`it's a tie`;
         }else if(computer=="paper"){
+            document.querySelector("#commentary").innerHTMl=`paper beats rock`;
             computerScore+=1
             update_score();
+            
         } else if(computer=="scissors"){
             playerScore+=1
             update_score();
+            document.querySelector("#commentary").innerHTMl=`scissors beats rock`;
         }else{alert("error");}
     }
     function paper(){
         let computer=computerPlay();
         document.querySelector(".computeranswers").innerHTML=`<h4>Computer=${computer} </h4>`;
         if (computer=="paper"){
-        alert("it's a tie");
+            document.querySelector("#commentary").innerHTMl=`it's a tie`;
         }else if(computer=="rock"){
             playerScore+=1
             update_score();
+            document.querySelector("#commentary").innerHTMl=`paper beats rock`;
         } else if(computer=="scissors"){
             computerScore+=1
             update_score();
+            document.querySelector("#commentary").innerHTMl=`scissors beats rock`;
         }else{alert("error");}
     }
     function scissors(){
         let computer=computerPlay();
         document.querySelector(".computeranswers").innerHTML=`<h4>Computer=${computer} </h4>`;
         if (computer=="scissors"){
-        alert("it's a tie");
-        }else if(computer=="paper"){
+            document.querySelector("#commentary").innerHTMl=`it's a tie`;
+            }else if(computer=="paper"){
             playerScore+=1
             update_score();
-        } else if(computer=="rock"){
+            document.querySelector("#commentary").innerHTMl=`scissors beats paper`;
+            } else if(computer=="rock"){
             computerScore+=1
             update_score();
+            document.querySelector("#commentary").innerHTMl=`rock beats scissors`;
         }else{alert("error");}
     }
     /*compares the two players*/
     function comparision(){
         let computer=computerPlay();
-        console.log(computer);
         let player= playerSelection();
         if (player=="rock"){
         rock();
