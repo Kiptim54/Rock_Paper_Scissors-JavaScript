@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function(){
     document.querySelector('form').onsubmit=function(event){
         event.preventDefault();
         var name=document.querySelector('input').value;
-        alert(name);
         document.querySelector('input').value="";
         //hide form and display game
         document.querySelector('form').style.display="none";
@@ -22,19 +21,22 @@ document.addEventListener('DOMContentLoaded', function(){
     function computerPlay(){
         let choices=["rock", "paper", "scissors"]
         let answer=choices[Math.floor(Math.random()*3)]
+        console.log("computer:"+answer);
         return answer
+       
     }
     /*returns  player options*/
     function update_score(){
         var scores=document.querySelector("#teams");
         scores.innerHTML=`<h4>${name}:${playerScore} Computer:${computerScore}</h4>`;
     }
-    function playerSelection(){
-        player=prompt("please choose one?");
-        return player.toLowerCase()
+  
+    function stateChoices(){
+        document.querySelector(".answers").innerHTML=`<h4>Computer=${computer} | ${name}=$</h4>`;
     }
     function rock(){
-        let computer=computerPlay();
+        var computer=computerPlay();
+        document.querySelector(".computeranswers").innerHTML=`<h4>Computer=${computer} </h4>`;
         if (computer=="rock"){
         alert("it's a tie");
         }else if(computer=="paper"){
@@ -47,6 +49,7 @@ document.addEventListener('DOMContentLoaded', function(){
     }
     function paper(){
         let computer=computerPlay();
+        document.querySelector(".computeranswers").innerHTML=`<h4>Computer=${computer} </h4>`;
         if (computer=="paper"){
         alert("it's a tie");
         }else if(computer=="rock"){
@@ -59,6 +62,7 @@ document.addEventListener('DOMContentLoaded', function(){
     }
     function scissors(){
         let computer=computerPlay();
+        document.querySelector(".computeranswers").innerHTML=`<h4>Computer=${computer} </h4>`;
         if (computer=="scissors"){
         alert("it's a tie");
         }else if(computer=="paper"){
@@ -90,15 +94,24 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
     document.querySelector('#rock').onclick=function(){
+        choice=document.querySelector('#rock').value;
+        console.log("player:"+choice);
         rock();
+        document.querySelector(".answers").innerHTML=`${name}=${choice}</h4>`;
     };
 
     document.querySelector("#paper").onclick=function(){
+        paperchoice=document.querySelector('#paper').value;
+        console.log("player:"+paperchoice);
         paper();
+        document.querySelector(".answers").innerHTML=`${name}=${paperchoice}</h4>`;
     };
 
     document.querySelector("#scissors").onclick=function(){
+        scissorschoice=document.querySelector('#scissors').value;
+        console.log("player:"+scissorschoice);
         scissors();
+        document.querySelector(".answers").innerHTML=`${name}=${scissorschoice}</h4>`;
     };
 
 };

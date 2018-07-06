@@ -1,3 +1,7 @@
 *{
     text-align:center;
 }
+.answers, .computeranswers{
+    color:red;
+    display: inline-block;
+}
