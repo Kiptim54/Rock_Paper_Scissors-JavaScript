@@ -1,5 +1,6 @@
 *{
     text-align:center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     
 }
 .answers, .computeranswers{
@@ -18,3 +19,7 @@ body{
 .setup{
     color:white;
 }
+.game{
+    color:white;
+}
+

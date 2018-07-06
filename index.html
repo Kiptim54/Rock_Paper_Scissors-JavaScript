@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/script.js"></script>
-    <title>Document</title>
+    <title>Rock Paper Scissors | Kiptim</title>
     <script>
     </script>
 </head>
@@ -16,15 +17,16 @@
     <h1>Rock, Paper, Scissors!</h1>
     
     
-        <form action="submit">
+        <form class="form-group"action="submit">
             <h3>Before we begin, key in your name</h3>
-            <input placeholder="Your name" class="input" type="text" name="name">
+            <input  placeholder="Your name" class="input" type="text" name="name">
             <input type="submit">
         </form>
     </div>
     
         <div class="game">
-            <h3>Click any of the options to begin the game</h3>
+            <strong> <h1>Rock, Paper or Scissors?</h1></strong>
+           
             <div id="teams">
             
             </div>
@@ -36,11 +38,11 @@
 
             </div>
             <br>
-            <button id="rock" value="rock">Rock</button>
-            <button id="paper" value="paper">Paper</button>
-            <button id="scissors" value="scissors">Scissors</button>
+            <img id="rock" data-value="rock" src="https://www.campcanary.co.uk/uploads/rock-icon-grey.png" alt="">
+            <img id="paper" data-value="paper"src="https://www.campcanary.co.uk/uploads/paper-icon-grey.png" alt="">
+            <img id="scissors" data-value="scissors" src="https://www.campcanary.co.uk/uploads/scissors-icon-grey.png" alt="">
             <div id="commentary">
-                Commentary:
+                
             </div>
             
         </div>

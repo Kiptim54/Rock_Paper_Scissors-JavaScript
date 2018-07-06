@@ -11,9 +11,9 @@ document.addEventListener('DOMContentLoaded', function(){
         //hide form and display game
         document.querySelector('.setup').style.display="none";
         document.querySelector(".game").style.display="block";
-        document.querySelector("body").style.background="white";
+        document.querySelector("body").style.background="lightblue";
         var scores=document.querySelector("#teams");
-        scores.innerHTML=`<h4>${name}:${playerScore} Computer:${computerScore}</h4>`;
+        scores.innerHTML=`<h1>${name}:${playerScore} Computer:${computerScore}</h1>`;
         
     
 
@@ -28,33 +28,33 @@ document.addEventListener('DOMContentLoaded', function(){
     /*returns  player options*/
     function update_score(){
         var scores=document.querySelector("#teams");
-        scores.innerHTML=`<h4>${name}:${playerScore} Computer:${computerScore}</h4>`;
+        scores.innerHTML=`<h1>${name}:${playerScore} Computer:${computerScore}</h1>`;
     }
   
     function stateChoices(){
-        document.querySelector(".answers").innerHTML=`<h4>Computer=${computer} | ${name}=$</h4>`;
+        document.querySelector(".answers").innerHTML=`<h1>Computer=${computer} | ${name}=$</h1>`;
     }
     function rock(){
         var computer=computerPlay();
-        document.querySelector(".computeranswers").innerHTML=`<h4>Computer=${computer} </h4>`;
+        document.querySelector(".computeranswers").innerHTML=`<h1>Computer=${computer} </h1>`;
         if (computer=="rock"){
-            document.querySelector("#commentary").innerHTML=`it's a tie`;
+            document.getElementById("commentary").innerHTML=`<h1>it's a tie</h1>`;
         }else if(computer=="paper"){
-            document.querySelector("#commentary").innerHTMl=`paper beats rock`;
-            computerScore+=1
+            document.getElementById("commentary").innerHTMl=`paper beats rock`;
+            computerScore+=1;
             update_score();
             
         } else if(computer=="scissors"){
-            playerScore+=1
+            playerScore+=1;
             update_score();
-            document.querySelector("#commentary").innerHTMl=`scissors beats rock`;
+            document.getElementById("commentary").innerHTMl=`scissors beats rock`;
         }else{alert("error");}
     }
     function paper(){
         let computer=computerPlay();
-        document.querySelector(".computeranswers").innerHTML=`<h4>Computer=${computer} </h4>`;
+        document.querySelector(".computeranswers").innerHTML=`<h1>Computer=${computer} </h1>`;
         if (computer=="paper"){
-            document.querySelector("#commentary").innerHTMl=`it's a tie`;
+            document.getElementById("commentary").innerHTML=`<h1>it's a tie</h1>`;
         }else if(computer=="rock"){
             playerScore+=1
             update_score();
@@ -67,9 +67,9 @@ document.addEventListener('DOMContentLoaded', function(){
     }
     function scissors(){
         let computer=computerPlay();
-        document.querySelector(".computeranswers").innerHTML=`<h4>Computer=${computer} </h4>`;
+        document.querySelector(".computeranswers").innerHTML=`<h1>Computer=${computer} </h1>`;
         if (computer=="scissors"){
-            document.querySelector("#commentary").innerHTMl=`it's a tie`;
+            document.getElementById("commentary").innerHTML=`<h1>it's a tie</h1>`;
             }else if(computer=="paper"){
             playerScore+=1
             update_score();
@@ -100,24 +100,24 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
     document.querySelector('#rock').onclick=function(){
-        choice=document.querySelector('#rock').value;
+        choice=document.querySelector('#rock').dataset.value;
         console.log("player:"+choice);
         rock();
-        document.querySelector(".answers").innerHTML=`${name}=${choice}</h4>`;
+        document.querySelector(".answers").innerHTML=`<h1>${name}=${choice}</h1>`;
     };
 
     document.querySelector("#paper").onclick=function(){
-        paperchoice=document.querySelector('#paper').value;
+        paperchoice=document.querySelector('#paper').dataset.value;
         console.log("player:"+paperchoice);
         paper();
-        document.querySelector(".answers").innerHTML=`${name}=${paperchoice}</h4>`;
+        document.querySelector(".answers").innerHTML=`<h1>${name}=${paperchoice}</h1>`;
     };
 
     document.querySelector("#scissors").onclick=function(){
-        scissorschoice=document.querySelector('#scissors').value;
+        scissorschoice=document.querySelector('#scissors').dataset.value;
         console.log("player:"+scissorschoice);
         scissors();
-        document.querySelector(".answers").innerHTML=`${name}=${scissorschoice}</h4>`;
+        document.querySelector(".answers").innerHTML=`<h1>${name}=${scissorschoice}</h1>`;
     };
 
 };
